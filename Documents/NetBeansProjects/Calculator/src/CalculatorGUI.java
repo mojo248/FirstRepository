@@ -1,4 +1,6 @@
-
+//Eli Ankri
+//CS Final; 6/3/2014
+//Project to recreate microsft window's calculator
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.script.ScriptEngine;
@@ -66,7 +68,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        Menu_Password = new javax.swing.JMenu();
+        Menu_Password = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
         jButton7.setText("jButton2");
@@ -78,9 +80,23 @@ public class CalculatorGUI extends javax.swing.JFrame {
         display.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         display.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         display.setText("0");
+        display.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        display.setDragEnabled(true);
+        display.setEnabled(false);
+        display.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayActionPerformed(evt);
+            }
+        });
+        display.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                displayKeyPressed(evt);
+            }
+        });
 
         Button_0.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_0.setText("0");
+        Button_0.setBorder(null);
         Button_0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_0ActionPerformed(evt);
@@ -89,6 +105,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_Period.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_Period.setText(".");
+        Button_Period.setBorder(null);
         Button_Period.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_PeriodActionPerformed(evt);
@@ -97,6 +114,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_Plus.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_Plus.setText("+");
+        Button_Plus.setBorder(null);
         Button_Plus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_PlusActionPerformed(evt);
@@ -105,6 +123,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_1.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_1.setText("1");
+        Button_1.setBorder(null);
         Button_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_1ActionPerformed(evt);
@@ -113,6 +132,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_2.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_2.setText("2");
+        Button_2.setBorder(null);
         Button_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_2ActionPerformed(evt);
@@ -121,6 +141,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_3.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_3.setText("3");
+        Button_3.setBorder(null);
         Button_3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_3ActionPerformed(evt);
@@ -129,6 +150,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_5.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_5.setText("5");
+        Button_5.setBorder(null);
         Button_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_5ActionPerformed(evt);
@@ -137,6 +159,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_4.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_4.setText("4");
+        Button_4.setBorder(null);
         Button_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_4ActionPerformed(evt);
@@ -145,6 +168,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_6.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_6.setText("6");
+        Button_6.setBorder(null);
         Button_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_6ActionPerformed(evt);
@@ -153,6 +177,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_7.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_7.setText("7");
+        Button_7.setBorder(null);
         Button_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_7ActionPerformed(evt);
@@ -161,6 +186,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_8.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_8.setText("8");
+        Button_8.setBorder(null);
         Button_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_8ActionPerformed(evt);
@@ -169,6 +195,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_9.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_9.setText("9");
+        Button_9.setBorder(null);
         Button_9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_9ActionPerformed(evt);
@@ -241,6 +268,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         Button_Equals.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         Button_Equals.setText("=");
+        Button_Equals.setBorder(null);
         Button_Equals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_EqualsActionPerformed(evt);
@@ -394,7 +422,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         jMenu2.setText("Edit");
 
-        Menu_Password.setBorder(null);
+        Menu_Password.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         Menu_Password.setText("Password");
         Menu_Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -424,18 +452,22 @@ public class CalculatorGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Button which perform the action for the Sqaure Root operator
     private void Button_SqaureRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SqaureRootActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_SqaureRootActionPerformed
 
+    //Button which perform the action for the Recirical operator
     private void Button_RecipricalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RecipricalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_RecipricalActionPerformed
 
+    //Button which perform the action for the Percent operator
     private void Button_PercentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_PercentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_PercentActionPerformed
 
+    //Button which perform the action for the Equals operator
     private void Button_EqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_EqualsActionPerformed
         // TODO add your handling code here:
         //pass everything into an arrayList then cycle through list
@@ -449,10 +481,12 @@ public class CalculatorGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Button_EqualsActionPerformed
 
+    //Button which perform the action for the PlusMinus operator
     private void Button_PlusMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_PlusMinusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_PlusMinusActionPerformed
 
+    //Button which perform the action for the Division operator
     private void Button_DivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DivisionActionPerformed
         // TODO add your handling code here:
         if(display.getText().charAt(display.getText().length()-1) != '+' && 
@@ -463,6 +497,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         period = false;
     }//GEN-LAST:event_Button_DivisionActionPerformed
 
+    //Button which perform the action for the Minus operator
     private void Button_MinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MinusActionPerformed
         // TODO add your handling code here:
         if(display.getText().charAt(display.getText().length()-1) != '+' && 
@@ -473,6 +508,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         period = false;
     }//GEN-LAST:event_Button_MinusActionPerformed
 
+    //Button which perform the action for the Multiplication operator
     private void Button_MultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MultiplicationActionPerformed
         // TODO add your handling code here:
         if(display.getText().charAt(display.getText().length()-1) != '+' && 
@@ -483,11 +519,13 @@ public class CalculatorGUI extends javax.swing.JFrame {
         period = false;
     }//GEN-LAST:event_Button_MultiplicationActionPerformed
 
+    //Method which perform the action for the CE operator
     private void Button_CEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_CEActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_Button_CEActionPerformed
 
+    
     private void Button_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_6ActionPerformed
         // TODO add your handling code here:
         add("6");
@@ -503,6 +541,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         add("1");
     }//GEN-LAST:event_Button_1ActionPerformed
 
+    //Button which perform the action for the Addition operator
     private void Button_PlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_PlusActionPerformed
         // TODO add your handling code here:
         if(display.getText().charAt(display.getText().length()-1) != '+' && 
@@ -548,6 +587,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         add("9");
     }//GEN-LAST:event_Button_9ActionPerformed
 
+    //Button which perform the action for the Decimal operator
     private void Button_PeriodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_PeriodActionPerformed
         // TODO add your handling code here:
         if(period == false)
@@ -558,6 +598,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
         period = true;
     }//GEN-LAST:event_Button_PeriodActionPerformed
 
+    //Button which perform the action for the Backspace operator
     private void Button_BackSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_BackSpaceActionPerformed
         // TODO add your handling code here:
         if(display.getText().length()!=0)
@@ -582,14 +623,26 @@ public class CalculatorGUI extends javax.swing.JFrame {
         period = false;
     }//GEN-LAST:event_Button_CActionPerformed
 
+    //Unique features are awesome!!!!!
     private void Menu_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu_PasswordActionPerformed
         // TODO add your handling code here:
         String password =  JOptionPane.showInputDialog("ENTER A PASSWORD ");
-        
+
         if(password.equals("Time is an illusion"))
         display.setText("Lunchtime, doubly so.");
     }//GEN-LAST:event_Menu_PasswordActionPerformed
 
+    private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_displayActionPerformed
+
+    private void displayKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_displayKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_displayKeyPressed
+
+    
+    //Method which "adds" the character of pressed button to the display.
     public void add(String character)
     { 
         if(display.getText().equals("0"))
@@ -661,7 +714,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
     private javax.swing.JButton Button_PlusMinus;
     private javax.swing.JButton Button_Reciprical;
     private javax.swing.JButton Button_SqaureRoot;
-    private javax.swing.JMenu Menu_Password;
+    private javax.swing.JMenuItem Menu_Password;
     private javax.swing.JTextField display;
     private javax.swing.JButton jButton7;
     private javax.swing.JMenu jMenu1;
